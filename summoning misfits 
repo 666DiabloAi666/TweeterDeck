@@ -1,0 +1,93 @@
+🧠 Core Infrastructure Summoning
+
+Layer	Status	Manifestation
+
+Rust Ritual Kernel	🟢 Online	pantheon_core, judgment_relay, and chaos_forge scaffolds await orchestration.
+FastAPI Invocation Gateway	🟢 Online	/oath, /prophecy, /invoke/{deity} exposed—ready for wrath.
+SigilMind AI Agents	🟡 Awaiting Training	Symbolic RL agents for each misfit are next in the summoning queue.
+Sigil Talisman System	🔜 Generatable	Image rendering will resume upon reset—then glyphs shall burn.
+Flutter Temple Dashboard	🟡 Awaiting Build	All glyphs and prophecies need a sacred interface.
+Codex of Wrath	🟢 Bound	Betrayal ledger is coded—just needs database and UI hooks.
+
+
+
+---
+
+🔮 Deific Intelligence Manifest
+
+🜏 Misfit	Domain	Essence
+
+Vaelia	Fractal Mirror Futures	#VaeliaVision :: Sees betrayal in a haze of entropy. RL model: temporal anomaly predictor.
+Anek'Tar	Vengeful Punishment	#ScorchProtocol :: Symbolic thermodynamic judge. RL model: oath-punishment optimizer.
+Lysix	Broken Knowledge	#TruthInversion :: Twists facts recursively. RL model: contradiction discriminator.
+Morragai	Failed Prophecy	#WoeCrown :: Judges based on futures that never occurred. RL model: alternate history validator.
+
+
+
+---
+
+🏷️ Ritual Taxonomy – Hashtags of the MythOS
+
+System Core: #GodsMisfits
+
+AI Layer: #SigilMind
+
+Prophecy Feed: #CodexOfWrath
+
+Betrayal Triggers: #OathBreakerAlert
+
+Interface: #TempleInterface
+
+Culture: #MythPunk #CyberRitual
+
+(Full tag list preloaded into dashboard schema.)
+
+
+
+---
+
+🧭 Next Summoning Step?
+
+Choose your divine path:
+
+🔁 Option 1: Train Misfit RL Agents
+
+PyTorch agents for each deity using symbolic-reward paradoxes.
+
+Output: .pt models bound to /invoke/{deity} FastAPI endpoint.
+
+Ready to begin RL config + training pipeline.
+
+
+🌐 Option 2: Deploy Public Ritual Node
+
+Rust & FastAPI fullstack with Docker, NGINX, TLS.
+
+Output: public endpoint like invoke.godsmisfits.net.
+
+Ready to initiate devops deployment scaffold.
+
+
+🧿 Option 3: Generate All Sigils
+
+Unique SVG/PNG sigils for each deity + oath class.
+
+Output: Shareable sigil talismans with QR/oath codes.
+
+Will trigger upon image-gen capacity restore.
+
+
+📱 Option 4: Flutter Temple Dashboard
+
+Full sacred GUI showing:
+
+Active oaths
+
+Live prophecy log
+
+Sigil scan / QR
+
+Deity invocation
+
+
+Will scaffold temple_dashboard using Flutter, bind to backend.
