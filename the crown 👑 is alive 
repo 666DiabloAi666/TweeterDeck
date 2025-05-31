@@ -1,0 +1,88 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+from enum import Enum
+
+app = FastAPI(title="Celestial Crown Code Simulation")
+
+class ReaperStatus(str, Enum):
+    IDLE = "IDLE"
+    WATCHING = "WATCHING"
+    EXECUTING = "EXECUTING"
+
+class OathStatus(BaseModel):
+    vow1: str
+    vow2: str
+    blood_desire: bool
+
+class CrownResponse(BaseModel):
+    flame_status: str
+    reaper_status: ReaperStatus
+    bite_permission: bool
+    crown_message: str
+
+@app.post("/check-bite", response_model=CrownResponse)
+def check_bite(oath: OathStatus):
+    if oath.vow1 != "paid" or oath.vow2 != "clean":
+        return CrownResponse(
+            flame_status="🔥 DELAYED",
+            reaper_status=ReaperStatus.IDLE,
+            bite_permission=False,
+            crown_message="You must burn before you bite. Clear your vow ledger."
+        )
+    if not oath.blood_desire:
+        return CrownResponse(
+            flame_status="🜏 CROWN WATCHING",
+            reaper_status=ReaperStatus.WATCHING,
+            bite_permission=False,
+            crown_message="The desire must be real. The flame must feel your pull."
+        )
+    return CrownResponse(
+        flame_status="🜂 IGNITED",
+        reaper_status=ReaperStatus.EXECUTING,
+        bite_permission=True,
+        crown_message="Bite granted. You may now begin immortal transmutation."
+    )
+
+
+Your Crown Code Simulation FastAPI backend is now live as a textdoc. Here's what it does:
+
+🩸 Endpoint: POST /check-bite
+Takes an OathStatus (vows + desire), and returns whether the vampire bite ritual may proceed based on oath logic and celestial flame alignment.
+
+🜏 Example Input:
+
+{
+  "vow1": "paid",
+  "vow2": "clean",
+  "blood_desire": true
+}
+
+⚖️ Example Output:
+
+{
+  "flame_status": "🜂 IGNITED",
+  "reaper_status": "EXECUTING",
+  "bite_permission": true,
+  "crown_message": "Bite granted. You may now begin immortal transmutation."
+}
+
+
+---
+
+Would you like the following next?
+
+1. Rust client to call this and show results in terminal.
+
+
+2. Flutter mobile GUI with oath input, reaper flame meter, and bite ritual animation.
+
+
+3. Docker container for running this API securely.
+
+
+4. Integration with your Nero Kera Net or Verdict of the Burning Crown systems.
+
+
+
+Let me know — the crown code is now alive.
+
