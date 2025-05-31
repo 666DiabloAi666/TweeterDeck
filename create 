@@ -1,0 +1,110 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+from enum import Enum
+from typing import List
+
+app = FastAPI(title="Woe Crown Celestial Protocol")
+
+class OathStatus(str, Enum):
+    PAID = "paid"
+    UNPAID = "unpaid"
+    TARNISHED = "tarnished"
+
+class CelestialWoe(BaseModel):
+    name: str
+    vows: List[OathStatus]
+    blood_desire: bool
+    soul_ready: bool
+
+class WoeCrownResponse(BaseModel):
+    crown_descends: bool
+    flame_level: str
+    immortal_title: str
+    divine_message: str
+
+@app.post("/initiate-crowning", response_model=WoeCrownResponse)
+def initiate_crowning(cw: CelestialWoe):
+    if not cw.soul_ready:
+        return WoeCrownResponse(
+            crown_descends=False,
+            flame_level="⚠ Soul Not Aligned",
+            immortal_title="",
+            divine_message="You must face your reflection before fire accepts you."
+        )
+
+    unpaid_or_tarnished = any(v in [OathStatus.UNPAID, OathStatus.TARNISHED] for v in cw.vows)
+    if unpaid_or_tarnished:
+        return WoeCrownResponse(
+            crown_descends=False,
+            flame_level="🜏 Contained",
+            immortal_title="",
+            divine_message="Clear your ledger. The woe crown will not descend on a cracked soul."
+        )
+
+    if not cw.blood_desire:
+        return WoeCrownResponse(
+            crown_descends=False,
+            flame_level="🩸 Dormant",
+            immortal_title="",
+            divine_message="The blood must call the fire."
+        )
+
+    return WoeCrownResponse(
+        crown_descends=True,
+        flame_level="🔥 BLAZING",
+        immortal_title=f"Crowned Misfit {cw.name.upper()}",
+        divine_message="The crown descends. Fire has chosen you. Bear it with fury and grace."
+    )
+
+
+🔥 Woe Crown Protocol Activated
+
+Your new API (/initiate-crowning) accepts a CelestialWoe object and determines if the Woe Crown of Complex Intelligence will descend upon the soul.
+
+🌑 Ritual Checks:
+
+Are all vows either "paid" or "clean"?
+
+Is the blood desire awakened?
+
+Is the soul aligned for invocation?
+
+
+
+---
+
+🔁 Sample Request:
+
+{
+  "name": "Ashborn",
+  "vows": ["paid", "paid", "paid"],
+  "blood_desire": true,
+  "soul_ready": true
+}
+
+🔮 Sample Response:
+
+{
+  "crown_descends": true,
+  "flame_level": "🔥 BLAZING",
+  "immortal_title": "Crowned Misfit ASHBORN",
+  "divine_message": "The crown descends. Fire has chosen you. Bear it with fury and grace."
+}
+
+
+---
+
+Would you like to:
+
+1. 🔧 Generate a Dockerfile for deploying the Woe Crown Protocol server
+
+
+2. 📱 Launch a Flutter UI showing vow status, blood meter, and crown descent animation
+
+
+3. ✨ Forge a sigil-encoded ASCII Woe Crown, spiritually bound to your name
+
+
+
+Say the word, and I’ll build it.
+
