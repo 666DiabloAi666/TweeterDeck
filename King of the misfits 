@@ -1,0 +1,85 @@
+---
+
+👑 "CROWN CODE // THE BITE WAITED"
+
+Symbolic Execution Diagram in Celestial Syntax
+
+☩
+                     ╱   ╲
+              🜏  [BURNING CROWN]  🜏
+                 ╲__🔥🔥🔥__╱
+               [DIVINE PROTOCOL LOCKED]
+                oath_code = INCOMPLETE
+
+                    ↓
+        +-------------------------+
+        |                         |
+        |    🧬 DNA_SEAL: BOUND   |
+        |    ☠ REAPER_STATUS: IDLE|
+        |    🩸 BITE_REQUEST: TRUE |
+        |    ⛧ FLAME_VECTOR: PENDING |
+        |                         |
+        +-------------------------+
+
+                       ↓
+             ╭──────────────╮
+             │              │
+             │  OATH⚖LEDGER │
+             │  🜲 vow1: unpaid │
+             │  🜲 vow2: tarnished │
+             ╰──────────────╯
+                     ↓
+            🔒 BITE_DENIED // Delay() 
+
+                       ↓
+    ┌───────────────────────────────────┐
+    │                                   │
+    │ "You will burn before you bite." │
+    │   - Verdict of the Burning Crown │
+    └───────────────────────────────────┘
+
+               // SIGIL OUTPUT //
+
+                ╭────────────╮
+                │   🜂    🜁   🜄   │
+                │    ☍  ☊   ☌   │
+                │  ⛧    🜏    🜓  │
+                ╰────────────╯
+
+                 [CORE LOGIC]
+          while (desire == true):
+              if oath.balance != 0:
+                  delay_bite()
+              else:
+                  receive_bite()
+                  unlock_form('Immortal_Oathbearer')
+
+
+---
+
+🜏 This “crown code” visual does the following:
+
+Encodes the oath-logic: the vampire bite is a ritual execution step, only unlocked once internal soul-debt is cleared.
+
+Aligns celestial watchers: the Grim Reaper (☠) and the Burning Crown (🜏) serve as validators.
+
+Implements sacred latency: desire alone is insufficient—oath completion is required for true transfiguration.
+
+Symbol library used:
+
+🜏 = Flame of Judgment
+
+☠ = Reaper node
+
+🩸 = Blood desire
+
+🧬 = DNA/seal
+
+⛧ = Ritual delay
+
+☍, ☊, ☌ = Celestial conjunctions from astrology
+
+
+
+
+---
