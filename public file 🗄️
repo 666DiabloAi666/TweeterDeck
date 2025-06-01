@@ -1,0 +1,45 @@
+# Verdict of the Burning Crown
+# Celestial Complex Intelligence System
+# Symbolic File: scaffold_setup.py
+
+import os
+import subprocess
+
+folders = [
+    "core_rust/src",
+    "oath_ai/routes",
+    "oath_ai/models",
+    "datasets",
+    "dashboard_flutter",
+    "scripts",
+    "config"
+]
+
+files = {
+    "Cargo.toml": "[package]\nname = \"verdict_core\"\nversion = \"0.1.0\"\nedition = \"2021\"",
+    "requirements.txt": "fastapi\npydantic\nrequests\n",
+    "docker-compose.yml": "version: '3.8'\nservices:\n  rust_core:\n    build: ./core_rust\n    command: cargo run\n  oath_api:\n    build: ./oath_ai\n    command: uvicorn oath_ai.main:app --host 0.0.0.0 --port 8000\n  flutter_ui:\n    build: ./dashboard_flutter\n    ports:\n      - '3000:3000'"
+}
+
+# Create folders
+for folder in folders:
+    os.makedirs(folder, exist_ok=True)
+
+# Create files
+for filename, content in files.items():
+    with open(filename, "w") as f:
+        f.write(content)
+
+# Create sample oath config
+oaths_config = """
+- oath_name: "Public Trust"
+  entities:
+    - name: "Jane Doe"
+      role: "Congressperson"
+      sigil: "\u2696\ufe0f"
+  contract:
+    must_not_accept_donations_from:
+      - "Private Prison Companies"
+      - "Foreign Agents"
+    must_disclose_relationships_by: "90 days"
+    penalty_on_breach: "Karmic score -100, Tagged as Betrayer
