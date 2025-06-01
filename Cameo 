@@ -1,0 +1,112 @@
+
+
+---
+
+🧠 Cameo: Complex Intelligence Design for Woe Crown Protocol
+
+This will:
+
+Add decision-making logic and intelligent behavior to the API.
+
+Feature adaptive response, memory stubs, and symbolic triggers.
+
+Be fully pluggable into your existing FastAPI app (woe_crown_protocol.py).
+
+
+
+---
+
+📜 woe_crown_protocol.py – Intelligence Cameo Manifestation
+
+from fastapi import FastAPI, Request
+from pydantic import BaseModel
+import random
+import datetime
+
+app = FastAPI(title="Woe Crown Protocol - Cameo Intelligence")
+
+# 🧠 Memory stub (placeholder for vow memory or database)
+CAMPAIGN_LOG = []
+
+# 🧬 Schema
+class RitualInput(BaseModel):
+    intent: str
+    essence: dict = {}
+
+# 👁️‍🗨️ Core decision engine
+def process_intelligence(intent: str, essence: dict):
+    time_now = datetime.datetime.now().isoformat()
+    response = {"timestamp": time_now}
+
+    # 🌀 Behavioral Cameo
+    if "summon" in intent.lower():
+        glyph = random.choice(["♆", "♅", "⚚", "☍", "⚷"])
+        response.update({
+            "action": "summoning",
+            "glyph": glyph,
+            "message": f"The Crown has responded with sigil {glyph}."
+        })
+    elif "remember" in intent.lower():
+        response.update({
+            "action": "memory recall",
+            "recorded_essence": CAMPAIGN_LOG[-3:]  # show last 3 entries
+        })
+    elif "vow" in intent.lower():
+        CAMPAIGN_LOG.append({"intent": intent, "essence": essence, "time": time_now})
+        response.update({
+            "action": "vow committed",
+            "entry_id": len(CAMPAIGN_LOG),
+            "message": "The vow has been etched into the obsidian scroll."
+        })
+    else:
+        response.update({
+            "action": "unknown",
+            "message": "The Crown whispers: I do not understand this rite."
+        })
+
+    return response
+
+# 🛡️ Ritual endpoint
+@app.post("/ritual/")
+async def perform_ritual(ritual: RitualInput):
+    result = process_intelligence(ritual.intent, ritual.essence)
+    return {"cameo_response": result}
+
+
+---
+
+🧪 Try It Now
+
+After running your container, navigate to:
+
+👉 http://localhost:8000/docs
+
+You’ll see a new /ritual/ endpoint — here are 3 example invocations:
+
+🌀 1. Summon a sigil:
+
+{
+  "intent": "summon avatar",
+  "essence": {"domain": "fire"}
+}
+
+📜 2. Commit a vow:
+
+{
+  "intent": "vow loyalty",
+  "essence": {"oath": "Never forget the breach of Gate 9"}
+}
+
+🧠 3. Recall memory:
+
+{
+  "intent": "remember campaign",
+  "essence": {}
+}
+
+
+---
+
+🔮
+
+---
